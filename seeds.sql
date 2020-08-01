@@ -17,13 +17,11 @@ INSERT INTO role (title, salary, department_id) VALUES
 ("Social Media", 65000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
-("Landon", "Martin", 2, null),
-("Lady", "Gaga", 4, null),
-("Will", "Smith", 2, 1),
-("Kim", "K", 1, null),
-("Britney", "Spears", 4, null),
-("Peter", "Pan", 3, 3),
-("Moe", "Carr", 1, 2),
-("Ashley", "Wing", 3, null),
-("Allison", "Austin", 1, null),
-("Jesse", "Rob", 4, 4);
+("Landon", "Martin", 1, null),
+("Lady", "Gaga", 2, null),
+("Will", "Smith", 4, 1),
+("Kim", "K", 5, null),
+("Britney", "Spears", 3, null),
+("Peter", "Pan", 6, 3),
+("Moe", "Carr", 8, 2),
+("Ashley", "Wing", 7, null);

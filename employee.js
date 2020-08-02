@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "Princess92!",
   database: "employees_db"
 });
 
@@ -61,14 +61,32 @@ function start() {
 }
 
 function viewEmployee(){
+    var query = "SELECT * FROM employee";
+    connection.query(query, function(err, res){
+        if (err) throw err;
+        console.table(res);
+        start();
+    })
 
 };
 
 function viewDepartments(){
+    var query = "SELECT * FROM department";
+    connection.query(query, function(err, res){
+        if (err) throw err;
+        console.table(res);
+        start();
+    })
 
 };
 
 function viewRoles(){
+    var query = "SELECT * FROM role";
+    connection.query(query, function(err, res){
+        if (err) throw err;
+        console.table(res);
+        start();
+    })
 
 };
 

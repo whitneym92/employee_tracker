@@ -108,6 +108,32 @@ function addDepartment(){
 };
 
 function addEmployee(){
+    var query = "INSERT INTO employee (first_name, last_name, role_id) VALUES (?, ?, ?)"
+    inquirer
+    .prompt([{
+        name: "firstName",
+        type: "input",
+        message: "What is the employee's first name?"
+    },
+    {
+        name: "lastName",
+        type: "input",
+        message: "What is the employee's last name?"
+
+    },
+    {
+        name: "role",
+        type: "input",
+        message: "What is the employee's Role ID?"
+
+    }]).then(function (res) {
+        var employee = [res.firstName, res.lastName, res.role];
+        connection.query(query, employee, function(err, res){
+            if (err) throw err;
+            console.log("New employee submitted.");
+            start();
+        })
+    })
 
 };
 

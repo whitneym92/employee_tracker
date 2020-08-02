@@ -138,10 +138,55 @@ function addEmployee(){
 };
 
 function addRoles(){
+    var query = "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)"
+    inquirer
+    .prompt([{
+        name: "title",
+        type: "input",
+        message: "What is the new title?"
+    },
+    {
+        name: "salary",
+        type: "input",
+        message: "What is the salary for this title?"
+    },
+    {
+        name: "departmentID",
+        type: "input",
+        message: "What is the Department ID for this new role?"
+    }]).then(function(res) {
+        var role = [res.title, res.salary, res.departmentID];
+        connection.query(query, role,function (err, res) {
+            if (err) throw err;
+            console.log("New role submitted.");
+            start();
+        })
+    })
 
 };
 
 function updateRole(){
+    var query = "UPDATE employee SET role_id = ? WHERE id = ?";
+    inquirer
+    .prompt([{
+        name: "updateRole",
+        type: "input",
+        message: "What is the Role ID you would like to update to?"
+    },
+    {
+        name: "id",
+        type: "input",
+        message: "What is the Employee's ID that you are updating?"
+    }]).then(function (res){
+        var updateRole = [res.updateRole, res.id];
+        connection.query(query, updateRole, function(err,res) {
+            if (err) throw err;
+            console.log(res);
+            console.log("Updated employee's role");
+            start();
+        })
+    })
+
 
 };
 

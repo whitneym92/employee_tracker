@@ -7,3 +7,4 @@ This command-line application allows the user to track employee information via 
 This application runs through the terminal using node.js. Type "npm i" to install the packages needed then type "node employee.js" to see the application live.
 
 ## Video
+https://drive.google.com/file/d/1VeRyzWFzlmlrJxj-s1_T2-UWiVH_kklt/view

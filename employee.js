@@ -86,6 +86,7 @@ function viewRoles(){
         if (err) throw err;
         console.table(res);
         start();
+
     })
 
 };

@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "Princess92!",
+  password: "",
   database: "employees_db"
 });
 
@@ -91,6 +91,19 @@ function viewRoles(){
 };
 
 function addDepartment(){
+    var query = "INSERT INTO department (name) VALUES (?)"
+    inquirer
+    .prompt([{
+        name: "department",
+        type: "input",
+        message: "What's the name of your new department?"
+    }]).then(function (res) {
+        const departmentName = [res.department]
+        connection.query(query, departmentName, function (err, res) {
+            console.log("Department has been submitted.");
+            start();
+        })
+    })
 
 };
 
